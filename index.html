@@ -1,376 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Deepika Rongali — UI/UX Designer and Frontend Developer" />
-  <title>Deepika Rongali | Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deepika Rongali • Portfolio</title>
+  style.css
 </head>
 
 <body>
-  <!-- Top progress bar -->
-  <div class="progress" aria-hidden="true">
-    <div class="progress__bar" id="progressBar"></div>
-  </div>
+  <button class="toggle" onclick="toggleTheme()">☀︎ / ☾</button>
 
-  <!-- Decorative background -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg__blob bg__blob--1"></div>
-    <div class="bg__blob bg__blob--2"></div>
-    <div class="bg__noise"></div>
-  </div>
+  <main class="container">
+    <header class="hero">
+      <h1>Deepika Rongali</h1>
+      <p>UI/UX Designer • Frontend Enthusiast</p>
+    </header>
 
-  <!-- Header / Nav -->
-  <header class="header" id="top">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Go to top">
-        <span class="brand__mark">DR</span>
-        <span class="brand__text">Deepika Rongali</span>
-      </a>
-
-      <div class="nav__links" id="navLinks">
-        <a class="nav__link" href="#about">About</a>
-        <a class="nav__link" href="#skills">Skills</a>
-        <a class="nav__link" href="#projects">Projects</a>
-        <a class="nav__link" href="#contact">Contact</a>
-      </div>
-
-      <div class="nav__actions">
-        <!-- Accent picker -->
-        <div class="accent" aria-label="Accent color picker">
-          <button class="accent__dot is-active" data-accent="sky" aria-label="Accent sky"></button>
-          <button class="accent__dot" data-accent="violet" aria-label="Accent violet"></button>
-          <button class="accent__dot" data-accent="emerald" aria-label="Accent emerald"></button>
-        </div>
-
-        <!-- Theme toggle -->
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
-          <span class="icon" aria-hidden="true">🌙</span>
-        </button>
-
-        <!-- Mobile menu -->
-        <button class="icon-btn nav__burger" id="burger" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-          <span class="burger" aria-hidden="true"></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Mobile drawer -->
-  <aside class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
-      <div class="drawer__top">
-        <span class="mono">Menu</span>
-        <button class="icon-btn" id="drawerClose" type="button" aria-label="Close menu">✕</button>
-      </div>
-      <div class="drawer__links">
-        <a class="drawer__link" href="#about">About</a>
-        <a class="drawer__link" href="#skills">Skills</a>
-        <a class="drawer__link" href="#projects">Projects</a>
-        <a class="drawer__link" href="#contact">Contact</a>
-      </div>
-      <div class="drawer__hint mono">Tip: Use the color dots to change the accent.</div>
-    </div>
-    <button class="drawer__backdrop" id="drawerBackdrop" aria-label="Close menu"></button>
-  </aside>
-
-  <!-- Main -->
-  <main>
-    <!-- Hero -->
-    <section class="hero container">
-      <div class="hero__content reveal">
-        <p class="pill mono">
-          <span class="pill__dot" aria-hidden="true"></span>
-          UI/UX • Frontend • Accessible Design
-        </p>
-
-        <h1 class="hero__title">
-          Crafting <span class="grad">beautiful</span> interfaces with
-          <span class="grad">human-first</span> UX.
-        </h1>
-
-        <p class="hero__sub">
-          I design and build responsive, modern web experiences —
-          with clean visuals, thoughtful interaction, and accessibility.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#projects">Explore Projects</a>
-          <a class="btn btn--ghost" href="#contact">Contact Me</a>
-
-          <span class="tooltip-wrap">
-            <button class="btn btn--chip" type="button" id="copyEmailBtn">
-              Copy Email
-            </button>
-            <span class="tooltip" role="tooltip" id="copyTip">Click to copy</span>
-          </span>
-        </div>
-
-        <div class="hero__meta mono">
-          <span>Available for opportunities</span>
-          <span class="dot">•</span>
-          <span>Based in India</span>
-        </div>
-      </div>
-
-      <div class="hero__card reveal">
-        <div class="glass card">
-          <div class="card__top">
-            <div class="avatar" aria-hidden="true">D</div>
-            <div>
-              <div class="card__name">Deepika Rongali</div>
-              <div class="card__role mono">UI/UX Designer • Frontend</div>
-            </div>
-          </div>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="stat__num">8+</div>
-              <div class="stat__label mono">UI screens</div>
-            </div>
-            <div class="stat">
-              <div class="stat__num">5+</div>
-              <div class="stat__label mono">Projects</div>
-            </div>
-            <div class="stat">
-              <div class="stat__num">100%</div>
-              <div class="stat__label mono">Responsive</div>
-            </div>
-          </div>
-
-          <div class="card__badges">
-            <span class="badge">Figma</span>
-            <span class="badge">HTML/CSS</span>
-            <span class="badge">JS</span>
-            <span class="badge">Accessibility</span>
-          </div>
-
-          <a class="btn btn--primary btn--full" href="#projects">See work ↓</a>
-        </div>
-      </div>
+    <section class="card">
+      <h2>About</h2>
+      <p>
+        I design clean, human‑centered interfaces with a focus on usability,
+        accessibility, and modern UI systems.
+      </p>
     </section>
 
-    <!-- About -->
-    <section class="section container" id="about">
-      <div class="section__head reveal">
-        <h2 class="section__title">About</h2>
-        <p class="section__desc">
-          A quick snapshot of who I am and what I build.
-        </p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="glass panel reveal">
-          <h3 class="panel__title">Design mindset</h3>
-          <p>
-            I focus on clarity, hierarchy, and smooth micro‑interactions.
-            I design components that scale, stay consistent, and feel delightful.
-          </p>
-          <ul class="list">
-            <li>Accessible color contrast & keyboard support</li>
-            <li>Component-driven layouts</li>
-            <li>Clean typography & spacing systems</li>
-          </ul>
-        </div>
-
-        <div class="glass panel reveal">
-          <h3 class="panel__title">What I’m good at</h3>
-          <p>
-            From wireframes to responsive frontends — I bridge design and development.
-          </p>
-          <div class="chips">
-            <span class="chip">UI Design</span>
-            <span class="chip">UX Research</span>
-            <span class="chip">Prototyping</span>
-            <span class="chip">Responsive Web</span>
-            <span class="chip">Design Systems</span>
-            <span class="chip">CSS Animations</span>
-          </div>
-        </div>
-      </div>
+    <section class="card">
+      <h2>Skills</h2>
+      <div class="skill"><span>UI / UX</span><div style="--v:85%"></div></div>
+      <div class="skill"><span>HTML / CSS</span><div style="--v:90%"></div></div>
+      <div class="skill"><span>JavaScript</span><div style="--v:70%"></div></div>
     </section>
 
-    <!-- Skills -->
-    <section class="section container" id="skills">
-      <div class="section__head reveal">
-        <h2 class="section__title">Skills</h2>
-        <p class="section__desc">Animated skill meters + clean layout.</p>
-      </div>
-
-      <div class="glass panel reveal">
-        <div class="skill">
-          <div class="skill__row">
-            <span>HTML / CSS</span>
-            <span class="mono">90%</span>
-          </div>
-          <div class="meter" data-level="90"><span></span></div>
-        </div>
-
-        <div class="skill">
-          <div class="skill__row">
-            <span>UI / UX Design</span>
-            <span class="mono">88%</span>
-          </div>
-          <div class="meter" data-level="88"><span></span></div>
-        </div>
-
-        <div class="skill">
-          <div class="skill__row">
-            <span>JavaScript</span>
-            <span class="mono">75%</span>
-          </div>
-          <div class="meter" data-level="75"><span></span></div>
-        </div>
-
-        <div class="skill">
-          <div class="skill__row">
-            <span>Accessibility</span>
-            <span class="mono">80%</span>
-          </div>
-          <div class="meter" data-level="80"><span></span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section container" id="projects">
-      <div class="section__head reveal">
-        <h2 class="section__title">Projects</h2>
-        <p class="section__desc">
-          Filter chips + modal details (peer graders love this).
-        </p>
-      </div>
-
-      <div class="filters reveal" role="tablist" aria-label="Project filters">
-        <button class="filter is-active" data-filter="all" role="tab">All</button>
-        <button class="filter" data-filter="uiux" role="tab">UI/UX</button>
-        <button class="filter" data-filter="frontend" role="tab">Frontend</button>
-        <button class="filter" data-filter="responsive" role="tab">Responsive</button>
-      </div>
-
-      <div class="cards" id="projectGrid">
-        <article class="glass card project reveal" data-tags="uiux frontend responsive">
-          <div class="card__kicker mono">Featured</div>
-          <h3 class="card__title">Portfolio Redesign</h3>
-          <p class="card__text">Modern hero, filters, modal, theme toggle, animations.</p>
-          <div class="card__tags">
-            <span class="tag">UI/UX</span><span class="tag">Frontend</span><span class="tag">Responsive</span>
-          </div>
-          <div class="card__actions">
-            <button class="btn btn--primary" data-open-modal="Portfolio Redesign">Details</button>
-            <a class="btn btn--ghost" href="#contact">Work with me</a>
-          </div>
-        </article>
-
-        <article class="glass card project reveal" data-tags="frontend responsive">
-          <div class="card__kicker mono">Mini</div>
-          <h3 class="card__title">Responsive Landing</h3>
-          <p class="card__text">Grid layout, typography system, and accessible nav.</p>
-          <div class="card__tags">
-            <span class="tag">Frontend</span><span class="tag">Responsive</span>
-          </div>
-          <div class="card__actions">
-            <button class="btn btn--primary" data-open-modal="Responsive Landing">Details</button>
-            <button class="btn btn--ghost" type="button" data-toast="Nice choice!">Like</button>
-          </div>
-        </article>
-
-        <article class="glass card project reveal" data-tags="uiux">
-          <div class="card__kicker mono">Case</div>
-          <h3 class="card__title">UX Flow & Wireframes</h3>
-          <p class="card__text">User flow, wireframes, and component planning.</p>
-          <div class="card__tags">
-            <span class="tag">UI/UX</span>
-          </div>
-          <div class="card__actions">
-            <button class="btn btn--primary" data-open-modal="UX Flow & Wireframes">Details</button>
-            <a class="btn btn--ghost" href="#contact">Contact</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section container" id="contact">
-      <div class="section__head reveal">
-        <h2 class="section__title">Contact</h2>
-        <p class="section__desc">A clean form + friendly UX.</p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="glass panel reveal">
-          <h3 class="panel__title">Let’s connect</h3>
-          <p class="mono">Email: <span id="emailText">deepika.rongali@email.com</span></p>
-          <p>Prefer a quick message? Use the form — it shows a toast confirmation.</p>
-
-          <div class="social">
-            <a class="social__link" href="#" aria-label="LinkedIn (add your link)">LinkedIn</a>
-            <a class="social__link" href="#" aria-label="GitHub (add your link)">GitHub</a>
-            <a class="social__link" href="#" aria-label="Resume (add your link)">Resume</a>
-          </div>
-        </div>
-
-        <form class="glass panel reveal" id="contactForm">
-          <label class="label">
-            Name
-            <input class="input" name="name" placeholder="Your name" required />
-          </label>
-          <label class="label">
-            Email
-            <input class="input" type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label class="label">
-            Message
-            <textarea class="input" name="message" rows="4" placeholder="Tell me what you’re building..." required></textarea>
-          </label>
-          <button class="btn btn--primary" type="submit">Send message</button>
-          <p class="mono tiny">Demo form: shows confirmation toast (no backend).</p>
-        </form>
-      </div>
+    <section class="card project">
+      <h2>Featured Project</h2>
+      <p>Responsive portfolio with theme toggle and micro‑interactions.</p>
+      <button onclick="openModal()">View details</button>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer container">
-    <div class="mono tiny">Built with HTML/CSS/JS • Enhanced with Copilot</div>
-    <a class="mono tiny" href="#top">Back to top ↑</a>
-  </footer>
-
-  <!-- Back to top floating button -->
-  <button class="fab" id="backTop" aria-label="Back to top">↑</button>
-
-  <!-- Toast -->
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <!-- Modal -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Project details">
-      <button class="icon-btn modal__close" id="modalClose" aria-label="Close modal">✕</button>
-      <div class="modal__content">
-        <h3 id="modalTitle">Project</h3>
-        <p id="modalBody">
-          Details will appear here.
-        </p>
-        <div class="modal__bullets">
-          <div class="bullet"><span>✓</span> Responsive grid and typography</div>
-          <div class="bullet"><span>✓</span> Theme + accent toggles</div>
-          <div class="bullet"><span>✓</span> Tooltips, toasts, and modal</div>
-        </div>
-      </div>
-      <div class="modal__actions">
-        <button class="btn btn--primary" id="modalOkay">Nice</button>
-        <a class="btn btn--ghost" href="#contact">Contact</a>
-      </div>
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <span onclick="closeModal()">×</span>
+      <h3>Portfolio Website</h3>
+      <p>
+        Built with modern UI principles, subtle animations,
+        and Copilot‑assisted styling.
+      </p>
     </div>
-    <button class="modal__backdrop" id="modalBackdrop" aria-label="Close modal"></button>
   </div>
 
-  <script src="script.js"></script>
+  script.jsscript>
 </body>
 </html>
