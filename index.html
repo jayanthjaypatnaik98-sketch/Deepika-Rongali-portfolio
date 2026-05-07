@@ -1,228 +1,86 @@
-<!doctype html>
-<html lang="en" data-theme="light" data-accent="blue">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio | Alex Styles</title>
-  <meta name="description" content="Modern portfolio with responsive UI, dark mode, modals, and polished UX." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deepika Rongali | Portfolio</title>
 
-  <!-- IMPORTANT: Use relative paths for GitHub Pages project sites -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Optional: Nice modern font (works even if it fails to load) -->
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#">
-        <span class="brand-mark" aria-hidden="true">◆</span>
-        <span class="brand-text">Alex Styles</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <!-- Accent toggle -->
-        <button class="icon-btn" id="accentBtn" type="button"
-          aria-label="Change accent color"
-          data-tooltip="Accent color">
-          🎨
-        </button>
-
-        <!-- Theme toggle -->
-        <button class="icon-btn" id="themeBtn" type="button"
-          aria-label="Toggle theme"
-          data-tooltip="Dark / Light">
-          🌗
-        </button>
-      </div>
-    </div>
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Deepika Rongali</h1>
+    <p>UI/UX Designer • Frontend Developer</p>
+    <a href="#projects" class="cta">View My Work</a>
   </header>
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="pill">UI/UX Designer • Frontend Developer</p>
-          <h1 class="hero-title">
-            Designing clean, usable interfaces that feel <span class="accent">effortless</span>.
-          </h1>
-          <p class="hero-sub">
-            I build responsive, accessible digital experiences with modern UI patterns, micro-interactions, and polished visuals.
-          </p>
+  <!-- ABOUT -->
+  <section class="glass reveal">
+    <h2>About Me</h2>
+    <p>
+      I design intuitive, visually engaging digital experiences with a strong
+      focus on usability, accessibility, and modern UI principles.
+    </p>
+  </section>
 
-          <div class="hero-cta">
-            <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn ghost" href="#contact">Contact</a>
-          </div>
+  <!-- SKILLS -->
+  <section class="glass reveal">
+    <h2>Skills</h2>
 
-          <div class="social-row" aria-label="Social links">
-            <a class="chip" href="#" data-tooltip="LinkedIn" aria-label="LinkedIn">
-              <span aria-hidden="true">in</span>
-            </a>
-            <a class="chip" href="#" data-tooltip="GitHub" aria-label="GitHub">
-              <span aria-hidden="true">gh</span>
-            </a>
-            <a class="chip" href="#" data-tooltip="Email" aria-label="Email">
-              <span aria-hidden="true">@</span>
-            </a>
-          </div>
-        </div>
+    <div class="skill">
+      <span>HTML / CSS</span>
+      <div class="bar"><div style="width: 90%"></div></div>
+    </div>
 
-        <div class="hero-card reveal" role="img" aria-label="Profile highlight card">
-          <div class="glass">
-            <h2>Highlights</h2>
-            <ul class="checklist">
-              <li>Responsive layouts</li>
-              <li>Accessible components</li>
-              <li>Micro-interactions</li>
-              <li>Clean visual system</li>
-            </ul>
-            <div class="mini-stats">
-              <div class="stat">
-                <div class="stat-num">5+</div>
-                <div class="stat-label">Projects</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">3</div>
-                <div class="stat-label">UI patterns</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">A+</div>
-                <div class="stat-label">Polish</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="skill">
+      <span>UI / UX Design</span>
+      <div class="bar"><div style="width: 85%"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="bar"><div style="width: 70%"></div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+
+    <div class="projects">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>Responsive UI with modern UX patterns.</p>
+        <button onclick="openModal()">Details</button>
       </div>
+    </div>
+  </section>
 
-      <div class="hero-bg" aria-hidden="true"></div>
-    </section>
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <h3>Portfolio Website</h3>
+      <p>
+        This project demonstrates responsive layout, dark mode toggle,
+        animations, glassmorphism cards, and clean UI structure.
+      </p>
+    </div>
+  </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container two-col">
-        <div class="reveal">
-          <h2 class="section-title">About</h2>
-          <p class="muted">
-            I’m a designer/developer who loves turning complex requirements into clean, easy-to-use experiences.
-            I focus on clarity, accessibility, and delight — without sacrificing performance.
-          </p>
-          <div class="about-cards">
-            <div class="mini-card">
-              <h3>Design</h3>
-              <p>Layout, spacing, hierarchy, consistency.</p>
-            </div>
-            <div class="mini-card">
-              <h3>Build</h3>
-              <p>Responsive HTML/CSS + modern JS patterns.</p>
-            </div>
-            <div class="mini-card">
-              <h3>Polish</h3>
-              <p>Hover states, motion, and visual refinements.</p>
-            </div>
-          </div>
-        </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Deepika Rongali</p>
+  </footer>
 
-        <aside class="reveal">
-          <div class="info-card">
-            <h3>Quick Info</h3>
-            <div class="info-grid">
-              <div><span class="k">Location</span><span class="v">Hyderabad</span></div>
-              <div><span class="k">Focus</span><span class="v">UI/UX + Frontend</span></div>
-              <div><span class="k">Tools</span><span class="v">Figma, HTML, CSS, JS</span></div>
-              <div><span class="k">Availability</span><span class="v">Open to work</span></div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section alt">
-      <div class="container reveal">
-        <h2 class="section-title">Skills</h2>
-        <p class="muted">A simple visual system with consistent spacing, typography, and interaction patterns.</p>
-
-        <div class="skills-grid">
-          <div class="skill">
-            <div class="skill-top">
-              <span>HTML</span><span class="muted">Advanced</span>
-            </div>
-            <div class="bar"><span style="width: 92%"></span></div>
-          </div>
-          <div class="skill">
-            <div class="skill-top">
-              <span>CSS</span><span class="muted">Advanced</span>
-            </div>
-            <div class="bar"><span style="width: 90%"></span></div>
-          </div>
-          <div class="skill">
-            <div class="skill-top">
-              <span>JavaScript</span><span class="muted">Intermediate</span>
-            </div>
-            <div class="bar"><span style="width: 75%"></span></div>
-          </div>
-          <div class="skill">
-            <div class="skill-top">
-              <span>UI/UX</span><span class="muted">Advanced</span>
-            </div>
-            <div class="bar"><span style="width: 88%"></span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="projects-head reveal">
-          <div>
-            <h2 class="section-title">Projects</h2>
-            <p class="muted">Filter projects by category. Click “Details” for a modal view.</p>
-          </div>
-
-          <div class="filters" role="group" aria-label="Project filters">
-            <button class="filter active" type="button" data-filter="all">All</button>
-            <button class="filter" type="button" data-filter="ui">UI</button>
-            <button class="filter" type="button" data-filter="web">Web</button>
-            <button class="filter" type="button" data-filter="ux">UX</button>
-          </div>
-        </div>
-
-        <div class="grid reveal" id="projectGrid">
-          <article class="card" data-tags="web ui">
-            <div class="card-top">
-              <h3>Modern Portfolio</h3>
-              <span class="badge">Featured</span>
-            </div>
-            <p class="muted">Responsive layout with theme toggle, modal, and micro-interactions.</p>
-            <div class="card-actions">
-              <button class="btn small" type="button"
-                data-open-modal
-                data-title="Modern Portfolio"
-                data-desc="A polished portfolio with theme + accent toggles, scroll reveal, filters, and accessibility improvements."
-                data-tags="Web, UI, Responsive">
-                Details
-              </button>
-              <a class="btn small ghost" href="#" data-tooltip="Add your GitHub link">Code</a>
-            </div>
-          </article>
-
-          <article class="card" data-tags="ux ui">
-            <div class="card-top">
-              <h3>UX Case Study</h3>
-              <span class="badge subtle">Case Study</span>
-            </div>
+  <script src="script.js"></script>
+</body>
+</html>
